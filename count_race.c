@@ -14,7 +14,7 @@ long iterations = 0;
 long count = 0;
 // Here each thread has it's own local variables while executing this function.
 void *ThreadsExecution(void *rank)
-{
+{  
    long my_rank = (long)rank;
    long perthread = size / ThreadCount;
    long start = my_rank * perthread;
@@ -30,7 +30,6 @@ void *ThreadsExecution(void *rank)
          ++iterations;
       }
    }
-
    else
    {
       for (long i = start; i < end; ++i)
@@ -52,7 +51,7 @@ void main()
    scanf("%ld", &ThreadCount);
    srand(time(0));
    start = clock();
-   for (int i = 0; i < 100; ++i)
+   for (int i = 0; i < 100; ++i) // to run each test case 100 times
    {
       array = (long *)malloc(sizeof(long) * size);
       for (long i = 0; i < size; ++i)

@@ -15,6 +15,9 @@ long iterations = 0;
 long count = 0;
 pthread_mutex_t mutex;
 // Here each thread has it's own local variables while executing this function.
+/*Requires: Thread id(passed by the threads create function)
+Effects: Counts the number of 1's using different indexing for the array for each thread.
+*/
    void *ThreadsExecution(void *rank)
 {
    long my_rank = (long)rank;
